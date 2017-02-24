@@ -72,7 +72,7 @@ public class Carretera{
 
     @Override
     public String toString() {
-        return "Carretera{" + "nombre=" + nombre + ", numero=" + numero + ", distancia=" + distancia + ", lu_inicio=" + lu_inicio + ", lu_final=" + lu_final + '}';
+        return nombre;
     }
     
 }

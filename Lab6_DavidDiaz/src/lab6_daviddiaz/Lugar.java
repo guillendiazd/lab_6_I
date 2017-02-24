@@ -6,16 +6,17 @@ public class Lugar {
     private String nombre;
     private String direccion;
     private int nivel_seguridad;
-    ArrayList<Carretera> carreteras_entrada = new ArrayList();
+    Carretera carre_entrada;
     Carretera carre_salida;
 
     public Lugar() {
     }
 
-    public Lugar(String nombre, String direccion, int nivel_seguridad, Carretera carre_salida) {
+    public Lugar(String nombre, String direccion, int nivel_seguridad, Carretera carre_entrada, Carretera carre_salida) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.nivel_seguridad = nivel_seguridad;
+        this.carre_entrada = carre_entrada;
         this.carre_salida = carre_salida;
     }
 
@@ -43,12 +44,12 @@ public class Lugar {
         this.nivel_seguridad = nivel_seguridad;
     }
 
-    public ArrayList<Carretera> getCarreteras_entrada() {
-        return carreteras_entrada;
+    public Carretera getCarre_entrada() {
+        return carre_entrada;
     }
 
-    public void setCarreteras_entrada(ArrayList<Carretera> carreteras_entrada) {
-        this.carreteras_entrada = carreteras_entrada;
+    public void setCarre_entrada(Carretera carre_entrada) {
+        this.carre_entrada = carre_entrada;
     }
 
     public Carretera getCarre_salida() {

@@ -5,8 +5,8 @@ public class Casa extends Lugar{
         super();
     }
 
-    public Casa(String nombre, String direccion, int nivel_seguridad, Carretera carre_salida) {
-        super(nombre, direccion, nivel_seguridad, carre_salida);
+    public Casa(String nombre, String direccion, int nivel_seguridad, Carretera carre_entrada, Carretera carre_salida) {
+        super(nombre, direccion, nivel_seguridad, carre_entrada, carre_salida);
     }
 
     @Override

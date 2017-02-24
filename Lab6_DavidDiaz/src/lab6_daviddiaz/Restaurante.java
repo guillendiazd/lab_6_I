@@ -10,8 +10,8 @@ public class Restaurante extends Lugar{
         super();
     }
 
-    public Restaurante(String categoria, int calificacion, String nombre, String direccion, int nivel_seguridad, Carretera carre_salida) {
-        super(nombre, direccion, nivel_seguridad, carre_salida);
+    public Restaurante(String categoria, int calificacion, String nombre, String direccion, int nivel_seguridad, Carretera carre_entrada, Carretera carre_salida) {
+        super(nombre, direccion, nivel_seguridad, carre_entrada, carre_salida);
         this.categoria = categoria;
         this.calificacion = calificacion;
     }

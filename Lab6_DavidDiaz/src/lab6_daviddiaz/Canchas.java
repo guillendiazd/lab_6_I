@@ -10,8 +10,8 @@ public class Canchas extends Lugar{
         super();
     }
 
-    public Canchas(String categoria, String estado, String nombre, String direccion, int nivel_seguridad, Carretera carre_salida) {
-        super(nombre, direccion, nivel_seguridad, carre_salida);
+    public Canchas(String categoria, String estado, String nombre, String direccion, int nivel_seguridad, Carretera carre_entrada, Carretera carre_salida) {
+        super(nombre, direccion, nivel_seguridad, carre_entrada, carre_salida);
         this.categoria = categoria;
         this.estado = estado;
     }
