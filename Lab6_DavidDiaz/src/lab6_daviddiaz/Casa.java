@@ -11,7 +11,7 @@ public class Casa extends Lugar{
 
     @Override
     public String toString() {
-        return "Casa{" + super.toString() +'}';
+        return super.toString();
     }
     
 }

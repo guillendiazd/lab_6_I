@@ -1,17 +1,22 @@
 package lab6_daviddiaz;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 public class Carretera{
     private String nombre;
     private int numero;
     private int distancia;
     Lugar lu_inicio;
     Lugar lu_final;
+    ArrayList<Integer> valor_numero = new ArrayList();
 
     public Carretera() {
     }
 
     public Carretera(String nombre, int numero, int distancia, Lugar lu_inicio, Lugar lu_final) {
         this.nombre = nombre;
-        this.numero = numero;
+        this.setNumero(numero);
         this.distancia = distancia;
         this.lu_inicio = lu_inicio;
         this.lu_final = lu_final;
@@ -30,7 +35,15 @@ public class Carretera{
     }
 
     public void setNumero(int numero) {
-        this.numero = numero;
+        valor_numero.add(numero);
+        for (Integer t : valor_numero) {
+            if (numero!=t) {
+               this.numero = numero; 
+            } else {
+                JOptionPane.showMessageDialog(null, "Valor ya existe");
+            }
+        }
+        
     }
 
     public int getDistancia() {

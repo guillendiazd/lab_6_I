@@ -69,6 +69,10 @@ public class Principal extends javax.swing.JFrame {
         jTF_Distancia_Carre = new javax.swing.JTextField();
         jCB_Lugar_Inicio = new javax.swing.JComboBox<>();
         jCB_Lugar_Final = new javax.swing.JComboBox<>();
+        jB_Guardar_Carre = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jLabel5.setText("Categoria:");
 
@@ -297,31 +301,48 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jB_Guardar_Carre.setText("Guardar");
+        jB_Guardar_Carre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_Guardar_CarreMouseClicked(evt);
+            }
+        });
+        jB_Guardar_Carre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_Guardar_CarreActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel13)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCB_Lugar_Final, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel12)
-                                .addComponent(jLabel11))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTF_Distancia_Carre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTF_Numero_Carre, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTF_Nombre_Carre)
-                                .addComponent(jCB_Lugar_Inicio, 0, 165, Short.MAX_VALUE)))))
-                .addContainerGap(598, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel13)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jCB_Lugar_Final, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel12)
+                                        .addComponent(jLabel11))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTF_Distancia_Carre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTF_Numero_Carre, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTF_Nombre_Carre)
+                                        .addComponent(jCB_Lugar_Inicio, 0, 165, Short.MAX_VALUE))))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addComponent(jB_Guardar_Carre, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,10 +367,44 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jCB_Lugar_Final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(331, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jB_Guardar_Carre, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         jTP_Principal.addTab("Agregar Carretera", jPanel2);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(141, Short.MAX_VALUE))
+        );
+
+        jTP_Principal.addTab("Listar", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -469,6 +524,35 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTP_PrincipalStateChanged
 
+    private void jB_Guardar_CarreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Guardar_CarreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_Guardar_CarreActionPerformed
+
+    private void jB_Guardar_CarreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_Guardar_CarreMouseClicked
+        try {
+            String nombre;
+            int numero;
+            int distancia;
+            int index, index_2;
+            index = jCB_Lugar_Inicio.getSelectedIndex();
+            index_2 = jCB_Lugar_Final.getSelectedIndex();
+            nombre = jTF_Nombre_Carre.getText();
+            numero = Integer.parseInt(jTF_Numero_Carre.getText());
+            distancia = Integer.parseInt(jTF_Distancia_Carre.getText());
+            carretera.add(new Carretera(nombre, numero, distancia, (Lugar)jCB_Lugar_Inicio.getSelectedItem(),(Lugar)jCB_Lugar_Final.getSelectedItem()));
+            lugar.get(index).setCarre_salida(new Carretera(nombre, numero, distancia, (Lugar)jCB_Lugar_Inicio.getSelectedItem(),(Lugar)jCB_Lugar_Final.getSelectedItem()));
+            lugar.get(index_2).carreteras_entrada.add(new Carretera(nombre, numero, distancia, (Lugar)jCB_Lugar_Inicio.getSelectedItem(),(Lugar)jCB_Lugar_Final.getSelectedItem()));
+            JOptionPane.showMessageDialog(this, "Carretera ingresada exitosamente");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaron los datos");
+        }
+        jTF_Nombre_Carre.setText("");
+        jTF_Numero_Carre.setText("");
+        jTF_Distancia_Carre.setText("");
+        
+    }//GEN-LAST:event_jB_Guardar_CarreMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -508,6 +592,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bG_Lugar;
     private javax.swing.JButton jB_Guardar;
     private javax.swing.JButton jB_Guardar_Can;
+    private javax.swing.JButton jB_Guardar_Carre;
     private javax.swing.JButton jB_Guardar_res;
     private javax.swing.JComboBox<String> jCB_Calificacion_Res;
     private javax.swing.JComboBox<String> jCB_Categoria_Can;
@@ -531,10 +616,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRB_Cancha;
     private javax.swing.JRadioButton jRB_Casa;
     private javax.swing.JRadioButton jRB_Restaurante;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTA_Direccion;
     private javax.swing.JTextField jTF_Distancia_Carre;
     private javax.swing.JTextField jTF_Estado;
@@ -543,8 +630,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_Nombre_Carre;
     private javax.swing.JTextField jTF_Numero_Carre;
     private javax.swing.JTabbedPane jTP_Principal;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
     ArrayList<Lugar> lugar = new ArrayList();
+    ArrayList<Carretera> carretera = new ArrayList();
     String categoria_res;
     String categoria_can;
     int calificacion;
