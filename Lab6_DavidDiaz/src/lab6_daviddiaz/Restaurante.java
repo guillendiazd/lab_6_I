@@ -12,8 +12,8 @@ public class Restaurante extends Lugar{
 
     public Restaurante(String categoria, int calificacion, String nombre, String direccion, int nivel_seguridad, Carretera carre_salida) {
         super(nombre, direccion, nivel_seguridad, carre_salida);
-        this.setCategoria(categoria);
-        this.setCalificacion(calificacion);
+        this.categoria = categoria;
+        this.calificacion = calificacion;
     }
 
     public String getCategoria() {
@@ -21,17 +21,7 @@ public class Restaurante extends Lugar{
     }
 
     public void setCategoria(String categoria) {
-        if (categoria.equalsIgnoreCase("chino")) {
             this.categoria = categoria;
-        } else if (categoria.equalsIgnoreCase("mexicano")) {
-            this.categoria = categoria;
-        } else if (categoria.equalsIgnoreCase("italiano")) {
-            this.categoria = categoria;
-        } else if (categoria.equalsIgnoreCase("comida rapida")) {
-            this.categoria = categoria;
-        } else {
-            JOptionPane.showMessageDialog(null, "A ingresado un valor invalido");
-        }
     }
 
     public int getCalificacion() {
@@ -39,12 +29,7 @@ public class Restaurante extends Lugar{
     }
 
     public void setCalificacion(int calificacion) {
-        if (calificacion>=1 || calificacion<=5) {
             this.calificacion = calificacion;
-        } else {
-            JOptionPane.showMessageDialog(null, "La calificación es invalida");
-        }
-        
     }
 
     @Override

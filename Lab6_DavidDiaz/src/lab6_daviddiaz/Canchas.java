@@ -21,16 +21,7 @@ public class Canchas extends Lugar{
     }
 
     public void setCategoria(String categoria) {
-        if (categoria.equalsIgnoreCase("football")) {
             this.categoria = categoria;
-        } else if (categoria.equalsIgnoreCase("basquet")) {
-            this.categoria = categoria;
-        } else if (categoria.equalsIgnoreCase("tenis")) {
-            this.categoria = categoria;
-        } else {
-            JOptionPane.showConfirmDialog(null, "A ingresado un valor invalido");
-        }
-        
     }
 
     public String getEstado() {
