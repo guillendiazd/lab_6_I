@@ -35,15 +35,14 @@ public class Carretera{
     }
 
     public void setNumero(int numero) {
-        valor_numero.add(numero);
         for (Integer t : valor_numero) {
             if (numero!=t) {
-               this.numero = numero; 
+                this.numero = numero;
             } else {
                 JOptionPane.showMessageDialog(null, "Valor ya existe");
             }
         }
-        
+        valor_numero.add(numero);
     }
 
     public int getDistancia() {

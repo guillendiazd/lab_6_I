@@ -182,6 +182,27 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton2"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPopupMenu" name="jPOPM_MENU">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+      <SubComponents>
+        <MenuItem class="javax.swing.JMenuItem" name="jM_Eliminar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jM_EliminarActionPerformed"/>
+          </Events>
+        </MenuItem>
+      </SubComponents>
+    </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -557,13 +578,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="821" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="139" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jB_R" min="-2" pref="139" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                      <Component id="jB_C" min="-2" pref="139" max="-2" attributes="0"/>
+                      <EmptySpace pref="156" max="32767" attributes="0"/>
+                      <Component id="jB_Ca" min="-2" pref="139" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -573,7 +598,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="379" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jB_R" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_C" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_Ca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -606,15 +635,36 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jT_ListarMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="jB_R">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Restaurantes"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jB_RMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_RActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_C">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Canchas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jB_CMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_Ca">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Carreteras"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jB_CaMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_CaActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -638,7 +688,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jB_T_Restaurantes" min="-2" pref="274" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Component id="jB_T_Canchas" min="-2" pref="255" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="145" max="32767" attributes="0"/>
@@ -653,7 +703,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jB_T_Restaurantes" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_T_Canchas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="34" max="32767" attributes="0"/>
                   </Group>
@@ -685,10 +735,13 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jB_T_RestaurantesMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="jB_T_Canchas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Canchas"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jB_T_CanchasMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
